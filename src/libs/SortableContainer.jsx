@@ -57,7 +57,8 @@ export default function SortableContainer(props) {
           );
         }
 
-        dragHelper.current = document.body.appendChild(cloneNode(draggedNode));
+        const tmpCloneNode = props.customCloneNode ? props.customCloneNode : cloneNode
+        dragHelper.current = document.body.appendChild(tmpCloneNode(draggedNode));
         setTransitionDuration(dragHelper.current, defaultDuration);
         setInlineStyles(dragHelper.current, {
           visibility: 'visible',
