@@ -216,6 +216,7 @@ export default function SortableContainer(props) {
   return (
     <RefsContext.Provider value={{ refs, containerRef }}>
       <div
+        style={{ userSelect: 'none' }}
         ref={(c) => (containerRef.current = c)}
         onMouseDown={onTouchStart}
         onMouseMove={onTouchMove}
